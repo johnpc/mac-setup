@@ -1,8 +1,11 @@
-- Start with base installation https://github.com/thoughtbot/laptop/tree/main
-- Set up dotfiles: https://github.com/thoughtbot/dotfiles#install
-
-```
 #!/bin/bash
+
+# BASE INSTALLATION FROM THOUGHTBOT
+curl --remote-name https://raw.githubusercontent.com/thoughtbot/laptop/main/mac
+sh mac 2>&1 | tee ~/laptop.log
+git clone https://github.com/thoughtbot/dotfiles ~/dotfiles
+brew install rcm
+env RCRC=$HOME/dotfiles/rcrc rcup
 
 # OH MY ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -47,7 +50,7 @@ mas install 957862217	# JackBox Games		https://apps.apple.com/us/app/the-jackbox
 # Manage grc dot file
 cat > ~/.grc.conf <<EOF
 
-info code info 
+info code info
 info code info
 info code info
 
@@ -65,8 +68,8 @@ all: help
 ssh: ## ssh to jpc.io
 	@ssh root@142.93.59.54
 
-.PHONY: sync-amplify 
-sync-amplify: ## rsyncs from amplify-cli dir on mac to cloud desktop 
+.PHONY: sync-amplify
+sync-amplify: ## rsyncs from amplify-cli dir on mac to cloud desktop
 	@sync-amplify
 
 
