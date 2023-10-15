@@ -22,6 +22,7 @@ brew install --cask visual-studio-code # USE Settings Sync to get your proper VS
 brew install --cask discord
 brew install --cask iterm2
 brew install --cask inkscape
+brew install --cask gimp
 brew install --cask firefox
 brew install --cask zoom
 brew install --cask rocket
