@@ -29,6 +29,7 @@ brew install --cask rocket
 brew install --cask microsoft-edge
 brew install --cask slack
 brew install --cask intellij-idea
+brew install --cask obs
 
 brew install ack
 brew install jq
@@ -185,4 +186,10 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 EOF
-```
+
+echo 'alias ncdu="sudo ncdu / --exclude-firmlinks"' >> ~/.zshrc
+echo 'export NVM_DIR=~/.nvm' >> ~/.zshrc
+echo 'source $(brew --prefix nvm)/nvm.sh' >> ~/.zshrc
+cat >> ~/zshrc <<EOF
+alias clear="printf '\033[2J\033[3J\033[1;1H'"
+EOF
