@@ -36,6 +36,10 @@ brew install wget2
 brew install tailscale
 brew install speedtest-cli
 brew install grc
+brew install gifsicle
+brew install ncdu
+brew install youtube-dl
+brew install awscli
 
 # Manage App Store installs
 brew install mas
@@ -49,11 +53,13 @@ mas install 957862217	# JackBox Games		https://apps.apple.com/us/app/the-jackbox
 
 # Manage grc dot file
 cat > ~/.grc.conf <<EOF
+regexp=SEVERE
+colours=on_red
+count=more
 
-info code info
-info code info
-info code info
-
+regexp=SUCCESS
+colours=on_green
+count=more
 EOF
 
 # Manage Makefile
