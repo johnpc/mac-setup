@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# CLI tools
+xcode-select --install
+
 # BASE INSTALLATION FROM THOUGHTBOT
 curl --remote-name https://raw.githubusercontent.com/thoughtbot/laptop/main/mac
 sh mac 2>&1 | tee ~/laptop.log
